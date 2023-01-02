@@ -1,18 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
 
-import { Route, Routes, Link } from 'react-router-dom';
-
-import {List} from "@chupachap/basic-components"
+import { Link } from 'react-router-dom';
+import { Routes } from './router';
 
 export function App() {
   return (
-    <>
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
+    <div style={styles}>
       <div role="navigation">
-        <ul>
+        <ul style={{ display: 'flex', listStyle: 'none'}}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -21,27 +17,8 @@ export function App() {
           </li>
         </ul>
       </div>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
-        <Route
-          path="/page-2"
-          element={
-            <div>
-              <Link to="/"><List list={[{id: '1', title: 'Sebastian Kaplanski', description: 'genio', data: {}}]} onPressItem={(id) => console.log(id)}/></Link>
-            </div>
-          }
-        />
-      </Routes>
-      {/* END: routes */}
-    </>
+      <Routes />
+    </div>
   );
 }
 
