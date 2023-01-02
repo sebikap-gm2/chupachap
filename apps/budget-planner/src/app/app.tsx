@@ -3,6 +3,8 @@ import styles from './app.module.scss';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
+import {List} from "@chupachap/basic-components"
+
 export function App() {
   return (
     <>
@@ -33,7 +35,7 @@ export function App() {
           path="/page-2"
           element={
             <div>
-              <Link to="/">Click here to go back to root page.</Link>
+              <Link to="/"><List list={[{id: '1', title: 'Sebastian Kaplanski', description: 'genio', data: {}}]} onPressItem={(id) => console.log(id)}/></Link>
             </div>
           }
         />
